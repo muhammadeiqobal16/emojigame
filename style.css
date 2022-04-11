@@ -124,6 +124,7 @@ aside{
 
 aside .rules{
     grid-area: rules;
+    padding: 10px;
 }
 
 aside .rules ol{
