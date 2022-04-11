@@ -4,14 +4,11 @@ const menu = document.querySelector('.boxSpan .menu');
 const boxes = document.querySelectorAll('.box');
 const container = document.getElementsByClassName('container')[0];
 const timer = document.querySelector('.timer');
+const timeLeft = document.querySelector('.timeleft');
 
 
 // DATA LIBRARIES
 const emoji = ['😀', '😀', '😘', '😘', '😑', '😑', '🥰', '🥰', '😯', '😯', '😪', '😪', '😫', '😫', '😴', '😴'];
-
-
-
-
 
 // MAIN FUNCTION
 playBtn.addEventListener('click', function(){
@@ -94,6 +91,7 @@ playBtn.addEventListener('click', function(){
     
         // GAME TIMER & RESULT DECISION PROCESS
         timer.textContent = 30;
+        timeLeft.textContent = 'Waktu Tersisa'
         // let result;
         const timeCount = setInterval(function(){
             if(timer.textContent>1){
@@ -110,7 +108,7 @@ playBtn.addEventListener('click', function(){
                         menu.parentElement.style.display = 'inherit';
                         menu.style.width = `100%`;
                         menu.innerHTML = `<p><b>MENANG</b></p>
-                        <p>Terima kasih ❤</p>
+                        <p>Terima kasih sudah bermain ❤</p>
                         <div class="button">
                         <a class="endBtn" href="index.html">OK</a>
                         </div>`
@@ -123,7 +121,7 @@ playBtn.addEventListener('click', function(){
                 menu.parentElement.style.display = 'inherit';
                 menu.style.width = `100%`;
                 menu.innerHTML = `<p><b>KALAH</b></p>
-                <p>Ayo coba lagi ❤</p>
+                <p>Ayo coba lagi, sayang ❤</p>
                 <div class="button">
                 <a class="endBtn" href="index.html">OK</a>
                 </div>`
