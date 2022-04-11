@@ -5,6 +5,8 @@
 
 body{
     background-color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-image: url(subtlepatterns/memphis-colorful.png);
 }
 
 main{
@@ -12,6 +14,10 @@ main{
     padding: 5px;
     display: grid;
     place-content: center;
+}
+
+main h1{
+    place-self: center;
 }
 
 .mainbox{
@@ -57,7 +63,7 @@ main{
 
 .box{
     border: 1px solid black;
-    background-color: rgb(91, 79, 196);
+    background-color: rgb(114, 103, 218);
     width: 120px;
     height: 120px;
     cursor: pointer;
@@ -74,7 +80,7 @@ main{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(91, 79, 196);
+    background-color: rgb(114, 103, 218);
     opacity: 0;
 }
 
@@ -95,8 +101,11 @@ main{
 }
 
 .endBtn:hover{
-    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.9); */
     background-color: rgb(207, 192, 192);
+}
+
+.timer{
+    place-self: center;
 }
 
 
