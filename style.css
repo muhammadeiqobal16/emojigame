@@ -98,6 +98,11 @@ main{
 /* RESPONSIVE BREAKPOINT */
 /* SIZE 414 PX */
 @media (max-width: 414px){
+    .mainbox{
+        padding: 5px;
+        gap: 5px;
+    }
+
     .boxSpan .menu{
         text-align: center;
     }
@@ -113,8 +118,13 @@ main{
     }
 }
 
-/* SIZE 360 PX */
-@media (max-width: 360px){
+/* SIZE 390 PX */
+@media (max-width: 390px){
+    .mainbox{
+        padding: 3px;
+        gap: 3px;
+    }
+
     .boxSpan .menu{
         text-align: center;
     }
@@ -126,12 +136,39 @@ main{
     .box{
         width: 70px;
         height: 70px;
-        font-size: 3.2em;
+        font-size: 3.3em;
+    }
+}
+
+/* SIZE 360 PX */
+@media (max-width: 360px){
+    .mainbox{
+        padding: 3px;
+        gap: 3px;
+    }
+
+    .boxSpan .menu{
+        text-align: center;
+    }
+
+    .boxSpan .menu ol{
+        display: none;
+    }
+    
+    .box{
+        width: 70px;
+        height: 70px;
+        font-size: 3.3em;
     }
 }
 
 /* SIZE 320 PX */
 @media (max-width: 320px){
+    .mainbox{
+        padding: 3px;
+        gap: 3px;
+    }
+
     .boxSpan .menu{
         text-align: center;
     }
@@ -143,6 +180,6 @@ main{
     .box{
         width: 60px;
         height: 60px;
-        font-size: 2.5em;
+        font-size: 2.7em;
     }
 }
