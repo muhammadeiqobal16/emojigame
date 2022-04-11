@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+main{
+    margin: 50px auto;
+    padding: 5px;
+    display: grid;
+    place-content: center;
+}
+
+.mainbox{
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.boxSpan{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    z-index: 1;
+}
+
+.boxSpan .menu{
+    display: grid;
+    background-color: white;
+    width:50%;
+    padding: 30px;
+    border: 3px solid black;
+    border-radius: 10px;
+    place-self: center;
+    place-items: center;
+    gap: 10px;
+}
+
+.boxSpan .menu button{
+    width: 30%;
+    height: 30px;
+    cursor: pointer;
+}
+
+.box{
+    border: 1px solid black;
+    background-color: rgb(118, 105, 231);
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    font-size: 4em;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.box span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(118, 105, 231);
+    opacity: 0;
+}
+
+.box:hover{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 5);
+    transform: scale(103%);
+    transition: .3s;
+}
+
+.endBtn{
+    display: inline-block;
+    background-color: #ddd;
+    border: 1px solid black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.endBtn:hover{
+    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.9); */
+    background-color: rgb(207, 192, 192);
+}
+
+
+/* RESPONSIVE BREAKPOINT */
+/* SIZE 414 PX */
+@media (max-width: 414px){
+    .boxSpan .menu{
+        text-align: center;
+    }
+
+    .boxSpan .menu ol{
+        display: none;
+    }
+    
+    .box{
+        width: 80px;
+        height: 80px;
+        font-size: 3.5em;
+    }
+}
+
+/* SIZE 360 PX */
+@media (max-width: 360px){
+    .boxSpan .menu{
+        text-align: center;
+    }
+
+    .boxSpan .menu ol{
+        display: none;
+    }
+    
+    .box{
+        width: 70px;
+        height: 70px;
+        font-size: 3.2em;
+    }
+}
+
+/* SIZE 320 PX */
+@media (max-width: 320px){
+    .boxSpan .menu{
+        text-align: center;
+    }
+
+    .boxSpan .menu ol{
+        display: none;
+    }
+    
+    .box{
+        width: 60px;
+        height: 60px;
+        font-size: 2.5em;
+    }
+}
