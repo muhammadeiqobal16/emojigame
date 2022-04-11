@@ -10,17 +10,24 @@ body{
 }
 
 main{
-    margin: 50px auto;
+    margin: 10px auto;
     padding: 5px;
     display: grid;
     place-content: center;
+    grid-template-areas: 
+        'title title'
+        'mainbox aside';
 }
 
 main h1{
+    grid-area: title;
     place-self: center;
+    margin-bottom: 10px;
 }
 
 .mainbox{
+    grid-area: mainbox;
+    place-self: center;
     border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -46,7 +53,7 @@ main h1{
 }
 
 .boxSpan .menu{
-    display: grid;
+    text-align: center;
     background-color: white;
     width:50%;
     padding: 30px;
@@ -58,7 +65,7 @@ main h1{
 }
 
 .boxSpan .menu button{
-    width: 30%;
+    width: 80%;
     height: 30px;
     cursor: pointer;
 }
@@ -106,9 +113,35 @@ main h1{
     background-color: rgb(207, 192, 192);
 }
 
-.timer{
+aside{
+    grid-area: aside;
+    display: grid;
+    grid-template-areas: 
+        'rules'
+        'stopwatch';
+    grid-template-rows: 1fr 2fr;
+}
+
+aside .rules{
+    grid-area: rules;
+}
+
+aside .rules ol{
+    margin-left: 20px;
+}
+
+aside .stopwatch{
+    grid-area: stopwatch;
+    display: grid;
+    place-content: center;
+}
+
+aside .stopwatch h2{
     place-self: center;
-    margin-top: 30px;
+}
+
+aside .stopwatch .timer{
+    place-self: center;
     font-size: 3em;
 }
 
@@ -124,19 +157,28 @@ footer{
 }
 
 /* RESPONSIVE BREAKPOINT */
+
+/* SIZE 1080 PX */
+@media (max-width: 1080px){
+    main{
+        grid-template-areas: 
+            'title'
+            'mainbox'
+            'aside';
+        grid-template-columns: 1fr;
+    }
+
+    aside{
+        margin-top: 10px;
+        place-content: center;
+    }
+}
+
 /* SIZE 414 PX */
 @media (max-width: 414px){
     .mainbox{
         padding: 6px;
         gap: 6px;
-    }
-
-    .boxSpan .menu{
-        text-align: center;
-    }
-
-    .boxSpan .menu ol{
-        display: none;
     }
     
     .box{
@@ -151,14 +193,6 @@ footer{
     .mainbox{
         padding: 6px;
         gap: 6px;
-    }
-
-    .boxSpan .menu{
-        text-align: center;
-    }
-
-    .boxSpan .menu ol{
-        display: none;
     }
     
     .box{
