@@ -5,6 +5,9 @@ const boxes = document.querySelectorAll('.box');
 const container = document.getElementsByClassName('container')[0];
 const timer = document.querySelector('.timer');
 const timeLeft = document.querySelector('.timeleft');
+const timerLtl = document.querySelector('.timerltl');
+const timeLeftLtl = document.querySelector('.timeleftltl');
+
 
 
 // DATA LIBRARIES
@@ -91,20 +94,25 @@ playBtn.addEventListener('click', function(){
     
         // GAME TIMER & RESULT DECISION PROCESS
         timer.textContent = 30;
-        timeLeft.textContent = 'Waktu Tersisa'
-        // let result;
+        timerLtl.textContent = 30;
+        timeLeft.textContent = 'Waktu Tersisa';
+        timeLeftLtl.textContent = 'Waktu Tersisa:';
+
         const timeCount = setInterval(function(){
             if(timer.textContent>1){
                 for(let i=0; i<spanBoxes.length; i++){
                     if(spanBoxes[i].classList.contains('clickable')){
                         if(timer.textContent<=11){
                             timer.style.color = 'red'
+                            timerLtl.style.color = 'red'
                         }
                             timer.textContent--
+                            timerLtl.textContent = timer.textContent;
                             return;
                     }else if(i==spanBoxes.length-1){
                         clearInterval(timeCount);
-                        timer.textContent = 'GAME OVER'
+                        timer.textContent = 'GAME OVER';
+                        timerLtl.textContent = 'GAME OVER';
                         menu.parentElement.style.display = 'inherit';
                         menu.style.width = `100%`;
                         menu.innerHTML = `<p><b>MENANG</b></p>
@@ -117,7 +125,8 @@ playBtn.addEventListener('click', function(){
                 }
             } else{
                 clearInterval(timeCount);
-                timer.textContent = 'GAME OVER'
+                timer.textContent = 'GAME OVER';
+                timerLtl.textContent = 'GAME OVER';
                 menu.parentElement.style.display = 'inherit';
                 menu.style.width = `100%`;
                 menu.innerHTML = `<p><b>KALAH</b></p>
