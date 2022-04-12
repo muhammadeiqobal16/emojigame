@@ -156,12 +156,12 @@ aside .stopwatch .timer{
     padding: 5px;
 }
 
-.stopwatchltl .timeleftltl{
+.stopwatchltl .timeleft{
     font-size: 1em;
     place-self: center;
 }
 
-.stopwatchltl .timerltl{
+.stopwatchltl .timer{
     place-self: start;
     font-size: 1em;
 }
