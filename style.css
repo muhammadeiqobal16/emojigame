@@ -6,7 +6,7 @@
 body{
     background-color: white;
     font-family: 'Roboto Condensed', sans-serif;
-    background-image: url(subtlepatterns/memphis-colorful.png);
+    background-image: url(subtlepatterns/doodles.png);
 }
 
 main{
@@ -151,19 +151,19 @@ aside .stopwatch .timer{
     grid-area: ltlstp;
     display: none;
     min-height: 30px;
-    grid-template-columns: 180px auto;
+    grid-template-columns: 100px auto;
     place-content: center;
     padding: 5px;
 }
 
 .stopwatchltl .timeleftltl{
-    font-size: 1.5em;
+    font-size: 1em;
     place-self: center;
 }
 
 .stopwatchltl .timerltl{
-    place-self: center;
-    font-size: 1.5em;
+    place-self: start;
+    font-size: 1em;
 }
 
 footer{
@@ -187,7 +187,6 @@ footer{
             'mainbox'
             'ltlstp'
             'aside';
-        /* grid-template-columns: 1fr; */
     }
 
     .stopwatchltl{
@@ -198,6 +197,10 @@ footer{
     aside{
         margin-top: 10px;
         place-content: center;
+    }
+
+    aside .rules{
+        margin-top: -20px;
     }
 
     aside .stopwatch{
@@ -230,6 +233,10 @@ footer{
         width: 80px;
         height: 80px;
         font-size: 3.3em;
+    }
+
+    html, body{
+        height: 100px;
     }
 }
 
