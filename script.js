@@ -3,10 +3,8 @@ const playBtn = document.querySelector('.boxSpan .menu button');
 const menu = document.querySelector('.boxSpan .menu');
 const boxes = document.querySelectorAll('.box');
 const container = document.getElementsByClassName('container')[0];
-const timer = document.querySelector('.timer');
-const timeLeft = document.querySelector('.timeleft');
-const timerLtl = document.querySelector('.timerltl');
-const timeLeftLtl = document.querySelector('.timeleftltl');
+const [timer1, timer2] = document.querySelectorAll('.timer');
+const [timeLeft1, timeLeft2] = document.querySelectorAll('.timeleft');
 
 
 
@@ -39,18 +37,19 @@ playBtn.addEventListener('click', function(){
         // A. STOP SHUFFLING
         clearInterval(shuffling);
         menu.parentElement.style.display = 'none';
-        console.log(emoji);
+        // console.log(emoji);
     
         // B. CATCH SPAN ELEMENTS IN BOX CLASSES
         const spanBoxes = document.querySelectorAll('.box span');
         let tempVar;
     
+        // C. ADD CLICKABLE CLASS ON A SPAN BOXES
         for(let spanBox of spanBoxes){
             spanBox.classList.add('clickable');
             spanBox.style.opacity = 1;
         }
     
-        // C. GAME INTERACTION
+        // D. GAME INTERACTION
         container.addEventListener('click', function(c){
             for(let i=0; i<spanBoxes.length; i++){
                 if(spanBoxes[i].classList.contains('clicked')){
@@ -80,7 +79,6 @@ playBtn.addEventListener('click', function(){
                                 spanBoxes[i].classList.add('clickable');
                             }, 300)
                         }
-
                     }
                 } else if(i==spanBoxes.length-1){
                     if(c.target.classList.contains('clickable')){
@@ -92,48 +90,48 @@ playBtn.addEventListener('click', function(){
             }
         })
     
-        // GAME TIMER & RESULT DECISION PROCESS
-        timer.textContent = 30;
-        timerLtl.textContent = 30;
-        timeLeft.textContent = 'Waktu Tersisa';
-        timeLeftLtl.textContent = 'Waktu Tersisa:';
+        // E. GAME TIMER & RESULT DECISION PROCESS
+        timer1.textContent = 30;
+        timer2.textContent = timer1.textContent;
+        timeLeft1.textContent = 'Sisa Waktu:';
+        timeLeft2.textContent = 'Sisa Waktu';
 
         const timeCount = setInterval(function(){
-            if(timer.textContent>1){
+            if(timer1.textContent>1){
                 for(let i=0; i<spanBoxes.length; i++){
                     if(spanBoxes[i].classList.contains('clickable')){
-                        if(timer.textContent<=11){
-                            timer.style.color = 'red'
-                            timerLtl.style.color = 'red'
+                        if(timer1.textContent<=11){
+                            timer1.style.color = 'red'
+                            timer2.style.color = timer1.style.color;
                         }
-                            timer.textContent--
-                            timerLtl.textContent = timer.textContent;
+                            timer1.textContent--
+                            timer2.textContent--;
                             return;
                     }else if(i==spanBoxes.length-1){
                         clearInterval(timeCount);
-                        timer.textContent = 'GAME OVER';
-                        timerLtl.textContent = 'GAME OVER';
+                        timer1.textContent = 'GAME OVER';
+                        timer2.textContent = timer1.textContent;
                         menu.parentElement.style.display = 'inherit';
                         menu.style.width = `100%`;
                         menu.innerHTML = `<h3>MENANG</h3>
                         <p>Main lagi yuk, sayang! ❤</p>
                         <div class="button">
                         <a class="endBtn" href="index.html">OK</a>
-                        </div>`
+                        </div>`;
                         return;
                     }
                 }
             } else{
                 clearInterval(timeCount);
-                timer.textContent = 'GAME OVER';
-                timerLtl.textContent = 'GAME OVER';
+                timer1.textContent = 'GAME OVER';
+                timer2.textContent = timer1.textContent;
                 menu.parentElement.style.display = 'inherit';
                 menu.style.width = `100%`;
                 menu.innerHTML = `<h3>KALAH</h3>
                 <p>Ayo coba lagi sayang! ❤</p>
                 <div class="button">
                 <a class="endBtn" href="index.html">OK</a>
-                </div>`
+                </div>`;
                 return;
             }
         }, 1000)
