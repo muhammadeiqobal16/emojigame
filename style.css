@@ -220,6 +220,10 @@ footer{
         height: 80px;
         font-size: 3.5em;
     }
+
+    body{
+        overflow: hidden;
+    }
 }
 
 /* SIZE 390 PX */
@@ -281,5 +285,9 @@ footer{
         width: 60px;
         height: 60px;
         font-size: 2.7em;
+    }
+
+    body{
+        overflow: inherit;
     }
 }
