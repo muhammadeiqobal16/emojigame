@@ -115,8 +115,8 @@ playBtn.addEventListener('click', function(){
                         timerLtl.textContent = 'GAME OVER';
                         menu.parentElement.style.display = 'inherit';
                         menu.style.width = `100%`;
-                        menu.innerHTML = `<p><b>MENANG</b></p>
-                        <p>Terima kasih sudah bermain ❤</p>
+                        menu.innerHTML = `<h3>MENANG</h3>
+                        <p>Main lagi yuk, sayang! ❤</p>
                         <div class="button">
                         <a class="endBtn" href="index.html">OK</a>
                         </div>`
@@ -129,8 +129,8 @@ playBtn.addEventListener('click', function(){
                 timerLtl.textContent = 'GAME OVER';
                 menu.parentElement.style.display = 'inherit';
                 menu.style.width = `100%`;
-                menu.innerHTML = `<p><b>KALAH</b></p>
-                <p>Ayo coba lagi, sayang ❤</p>
+                menu.innerHTML = `<h3>KALAH</h3>
+                <p>Ayo coba lagi sayang! ❤</p>
                 <div class="button">
                 <a class="endBtn" href="index.html">OK</a>
                 </div>`
