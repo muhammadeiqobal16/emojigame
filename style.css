@@ -208,6 +208,24 @@ footer{
     }
 }
 
+/* SIZE 576 PX */
+@media (max-width: 576px){
+    .mainbox{
+        padding: 6px;
+        gap: 6px;
+    }
+    
+    .box{
+        width: 80px;
+        height: 80px;
+        font-size: 3.5em;
+    }
+
+    body{
+        overflow: hidden;
+    }
+}
+
 /* SIZE 414 PX */
 @media (max-width: 414px){
     .mainbox{
@@ -245,7 +263,7 @@ footer{
 }
 
 /* SIZE 360 PX */
-@media (max-width: 360px){
+@media (max-width: 370px){
     .mainbox{
         padding: 6px;
         gap: 6px;
@@ -267,7 +285,7 @@ footer{
 }
 
 /* SIZE 320 PX */
-@media (max-width: 320px){
+@media (max-width: 328px){
     .mainbox{
         padding: 6px;
         gap: 6px;
